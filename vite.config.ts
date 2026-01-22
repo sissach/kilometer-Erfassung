@@ -1,19 +1,14 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import path from "path";
 import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: '/kilometer-Erfassung/',
-})
   plugins: [react()],
+  base: './', // use relative paths so built assets load on GitHub Pages
   server: {
-    port: 3000,
-    host: true,
+    host: true, // bind dev server to 0.0.0.0 for remote/dev environments
+    port: 5173
   },
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "src"),
-    },
-  },
-});
+  build: {
+    outDir: 'dist'
+  }
+})
