@@ -1,9 +1,11 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
+import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: "/kilometer-Erfassung/", // exakt wie Repo-Name
+  base: '/kilometer-Erfassung/',
+})
   plugins: [react()],
   server: {
     port: 3000,
